@@ -1,0 +1,12 @@
+{
+  "name": "@jindosh/rgb_to_hex",
+  "version": "0.0.2",
+  "description": "",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
