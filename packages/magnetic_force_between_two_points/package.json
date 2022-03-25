@@ -1,0 +1,12 @@
+{
+  "name": "@jindosh/magnetic_force_between_two_points",
+  "version": "0.0.5",
+  "description": "",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

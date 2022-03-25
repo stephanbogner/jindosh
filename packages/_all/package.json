@@ -13,8 +13,11 @@
     "rollup-plugin-terser": "^7.0.2"
   },
   "dependencies": {
+    "@jindosh/magnetic_force_between_points": "^0.0.7",
+    "@jindosh/magnetic_force_between_two_points": "^0.0.5",
     "@jindosh/merge_class_names": "^0.0.1",
-    "@jindosh/rgb_to_hex": "^0.0.2"
+    "@jindosh/rgb_to_hex": "^0.0.2",
+    "@jindosh/unique_pairs_from_array_as_indexes": "^0.0.1"
   },
   "publishConfig": {
     "access": "public"

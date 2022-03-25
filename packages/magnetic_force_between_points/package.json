@@ -1,0 +1,16 @@
+{
+  "name": "@jindosh/magnetic_force_between_points",
+  "version": "0.0.7",
+  "description": "",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@jindosh/magnetic_force_between_two_points": "^0.0.5",
+    "@jindosh/unique_pairs_from_array_as_indexes": "^0.0.1"
+  }
+}
