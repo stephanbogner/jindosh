@@ -6,3 +6,4 @@ export { default as magnetic_force_between_points } from "@jindosh/magnetic_forc
 export { default as unique_pairs_from_array_as_indexes } from "@jindosh/unique_pairs_from_array_as_indexes";
 
 export { default as delaunay_triangulation } from "../dependent/delaunay_triangulation";
+export { default as get_inline_svg_for_downloading } from "../dependent/get_inline_svg_for_downloading";

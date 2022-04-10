@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>get_inline_svg_for_downloading</title>
+  </head>
+  <body>
+	<a id="downloadLink" href="" download="diagram.svg">Download ↓</a>
+	<svg id="svg" width="120" height="120">
+	        <rect fill="#000000" x="10" y="10" width="100" height="100"></rect>
+	</svg>
+
+	<script type="text/javascript" src="../../../assets-for-html-examples/tailwind-play.min.js"></script>
+    <script type="text/javascript" src="../../../assets-for-html-examples/jindosh-latest.min.js"></script>
+    <script type="text/javascript">
+    	const svgDom = document.getElementById('svg')
+
+    	document.getElementById('downloadLink').href = jindosh.get_inline_svg_for_downloading(svgDom)
+    </script>
+  </body>
+</html>
