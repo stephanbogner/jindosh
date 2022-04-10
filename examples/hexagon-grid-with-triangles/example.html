@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hexagon-grid-with-triangles</title>
+  </head>
+  <body>
+    <div class="h-screen w-screen flex items-center">
+      <canvas
+        id="myCanvas"
+        width="800"
+        height="800"
+        class="rounded-md mx-auto bg-gray-50"
+        style="width: 400px; height: 400px;">
+      </canvas>
+    </div>
+
+    <script type="text/javascript" src="../../assets-for-html-examples/tailwind-play.min.js"></script>
+    <script type="text/javascript" src="../../assets-for-html-examples/jindosh-latest.min.js"></script>
+    <script type="text/javascript">
+      const points = jindosh.get_hexagon_shaped_point_grid(4, 400)
+      const triangles = jindosh.delaunay_triangulation(points)
+
+      const canvas = document.getElementById('myCanvas');
+      const context = canvas.getContext('2d');
+      const center = {
+        x: canvas.width / 2,
+        y: canvas.height / 2
+      }
+
+      triangles.map((points_indexes) => {
+        let points_temp = []
+        points_indexes.map((index) => {
+          points_temp.push(points[index])
+        })
+        draw_polygon(shift_points(points_temp, center))
+      })
+
+      function shift_points(points, shift = {x:0, y:0}){
+        let new_points = JSON.parse(JSON.stringify(points))
+        return new_points.map((point) => {
+          point.x += shift.x
+          point.y += shift.y
+          return point
+        })
+      }
+
+      function draw_polygon(points){
+        context.fillStyle = 'rgb(60,' + Math.random()*255 + ',200)'
+        context.beginPath()
+        points.map((point, index) => {
+          if (index === 0) {
+            context.moveTo(point.x, point.y)
+          }else{
+            context.lineTo(point.x, point.y)
+          }
+        })
+        context.closePath();
+        context.fill();
+      }
+    </script>
+  </body>
+</html>
