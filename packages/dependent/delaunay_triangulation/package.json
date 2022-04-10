@@ -1,0 +1,15 @@
+{
+  "name": "@jindosh/delaunay_triangulation",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "delaunator": "^5.0.0"
+  }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>get_hexagon_shaped_point_grid</title>
+  </head>
+  <body>
+    <div class="h-screen w-screen flex items-center">
+      <canvas
+        id="myCanvas"
+        width="800"
+        height="800"
+        class="rounded-md mx-auto bg-gray-50"
+        style="width: 400px; height: 400px;">
+      </canvas>
+    </div>
+
+    <script type="text/javascript" src="../../assets-for-html-examples/tailwind-play.min.js"></script>
+    <script type="text/javascript" src="../../assets-for-html-examples/jindosh-latest.min.js"></script>
+    <script type="text/javascript">
+      const points = jindosh.get_hexagon_shaped_point_grid(4, 400)
+      console.log(points)
+
+      const canvas = document.getElementById('myCanvas');
+      const context = canvas.getContext('2d');
+      const center = {
+        x: canvas.width / 2,
+        y: canvas.height / 2
+      }
+
+      shift_points(points, center).map((point) => {
+        drawCircle(point)
+      })
+
+      function shift_points(points, shift = {x:0, y:0}){
+        let new_points = JSON.parse(JSON.stringify(points))
+        return new_points.map((point) => {
+          point.x += shift.x
+          point.y += shift.y
+          return point
+        })
+      }
+
+      function drawCircle(position, radius = 4, color = '#000'){
+        context.beginPath();
+        context.arc(position.x, position.y, radius, 0, 2 * Math.PI, false);
+        context.fillStyle = color;
+        context.fill();
+      }
+    </script>
+  </body>
+</html>

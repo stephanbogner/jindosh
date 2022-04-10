@@ -1,0 +1,12 @@
+{
+  "name": "@jindosh/get_hexagon_shaped_point_grid",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
