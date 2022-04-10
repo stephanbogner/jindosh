@@ -1,0 +1,7 @@
+{
+  "name": "jindosh",
+  "version": "1.0.0",
+  "scripts": {
+    "bundle": "rollup ./packages/_all/index.mjs -c ./packages/_all/rollup.config.js"
+  }
+}

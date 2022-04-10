@@ -1012,8 +1012,29 @@
 		// 	})
 		// }
 
+	function get_inline_svg_for_downloading(svg_element) {
+	    var serializer = new XMLSerializer();
+	    var source = serializer.serializeToString(svg_element);
+
+	    //add name spaces.
+	    if (!source.match(/^<svg[^>]+xmlns="http\:\/\/www\.w3\.org\/2000\/svg"/)) {
+	        source = source.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
+	    }
+	    if (!source.match(/^<svg[^>]+"http\:\/\/www\.w3\.org\/1999\/xlink"/)) {
+	        source = source.replace(/^<svg/, '<svg xmlns:xlink="http://www.w3.org/1999/xlink"');
+	    }
+
+	    //add xml declaration
+	    source = '<?xml version="1.0" standalone="no"?>\r\n' + source;
+
+	    //convert svg source to URI data scheme.
+	    var url = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(source);
+	    return url
+	}
+
 	exports.delaunay_triangulation = delaunay_triangulation;
 	exports.get_hexagon_shaped_point_grid = get_hexagon_shaped_point_grid;
+	exports.get_inline_svg_for_downloading = get_inline_svg_for_downloading;
 	exports.magnetic_force_between_points = magnetic_force_between_points;
 	exports.magnetic_force_between_two_points = magnetic_force_between_two_points;
 	exports.merge_class_names = merge_class_names;
